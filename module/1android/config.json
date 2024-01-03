@@ -1,0 +1,5 @@
+{
+  "command": "android_sign_command.py",
+  "fragment": "android_sign_fragment.py",
+  "module": "android_sign_module.py"
+}

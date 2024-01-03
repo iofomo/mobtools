@@ -1,0 +1,16 @@
+{
+  "title": "应用签名•APK",
+  "chooser-file-label": "请选择应用包apk文件",
+  "chooser-keystore-label": "请选择KeyStore证书文件",
+  "chooser-path-label": "请选择文件输出目录",
+  "text-sign-version": "签名方式：",
+  "btn-sign": "　签名　",
+  "edit-alias": "证书别名：",
+  "edit-alias-hint": "（Alias）",
+  "edit-password": "证书密码：",
+  "edit-password-hint": "（Password）",
+  "edit-store-password": "存储密码：",
+  "edit-store-password-hint": "（Store Password）",
+  "text-sign-version": "签名版本：",
+  "console-info": "Android应用签名支持Windows/MacOS/Linux操作系统。\n1. 首先需要准备好要签名的应用apk包、签名证书。\n2. 确保系统已安装Java运行环境。\n"
+}

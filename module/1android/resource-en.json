@@ -1,0 +1,16 @@
+{
+  "title": "Signature(APK)",
+  "chooser-file-label": "Please select apk file",
+  "chooser-keystore-label": "Please select key store file",
+  "chooser-path-label": "Please output path",
+  "text-sign-version": "Sign version：",
+  "btn-sign": "　Sign　",
+  "edit-alias": "Alias：",
+  "edit-alias-hint": "（Alias）",
+  "edit-password": "Password：",
+  "edit-password-hint": "（Password）",
+  "edit-store-password": "Store Password：",
+  "edit-store-password-hint": "（Store Password）",
+  "text-sign-version": "Version：",
+  "console-info": "Android application signing is supported on Windows/MacOS/Linux OS.\n1. Prepare the application apk package and key store for signing.\n2. Ensure that the system has installed the Java runtime environment.\n"
+}
