@@ -11,7 +11,7 @@
 
 ## 导航
 
--   [签名证书](https://www.iofomo.com/docs/desktop/mobtools/Guider)
+-   [操作指南](https://www.iofomo.com/docs/desktop/mobtools/Guider)
 
 ## 功能
 
