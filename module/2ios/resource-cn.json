@@ -1,0 +1,16 @@
+{
+  "title": "应用签名•IPA",
+  "chooser-in-label": "请选择ipa文件",
+  "chooser-out-label": "请选择文件输出目录",
+  "btn-sign": "　签名　",
+  "text-label-cert": "证书名称",
+  "text-main-provision": "选择主程序的描述文件",
+  "text-plugin-provision": "选择与插件匹配的描述文件（无插件则忽略）",
+  "text-plugin-dialog-title": "选择描述文件",
+  "text-plugin-dialog-content": "选择与插件对应的描述文件",
+  "text-plugin-format": "已选择 %d 个插件描述文件",
+  "console-info": "iOS平台应用签名仅支持MacOS运行。\n1. 首先需要准备好要签名的应用ipa包、P12证书和描述文件（若有插件则需要多个）。\n2. 将P12证书安装到系统中。\n3. 证书和描述文件创建请参考文档：Apple操作手册.pdf\n",
+  "text-bundle-id": "应用ID：",
+  "bundle-id-1": "保持不变",
+  "bundle-id-2": "同步更新(慎用)"
+}

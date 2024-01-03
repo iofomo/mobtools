@@ -1,0 +1,5 @@
+{
+  "command": "ios_sign_command.py",
+  "fragment": "ios_sign_fragment.py",
+  "module": "ios_sign_module.py"
+}

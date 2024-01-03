@@ -1,0 +1,18 @@
+{
+  "title": "工具箱•Android",
+  "chooser-path-label": "请选择文件输出目录",
+  "btn-collect-title": "　『 信息采集 』　",
+  "btn-collect-log": "　抓个日志　",
+  "btn-collect-shot": "　截个屏幕　",
+  "btn-collect-svr": "　服务状态　",
+  "btn-collect-ui": "　前台界面　",
+  "btn-collect-prop": "　设备属性　",
+  "btn-collect-app": "　安装列表　",
+  "btn-collect-all": "　采集全部　",
+  "btn-collect-top": "　前台应用　",
+  "btn-collect-pull": "　获取应用　",
+  "btn-collect-pull-hint": "（输入要获取的应用包名）",
+  "btn-tool-screen": "　设备投屏　",
+  "btn-tool-screen-hint": "（将设备投屏到电脑端）",
+  "console-info": "1. 首先确保Android系统设备已连接。\n2. 设备已开启开发者模式。\n"
+}

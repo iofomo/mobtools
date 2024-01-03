@@ -1,0 +1,19 @@
+{
+  "title": "Tools (Android)",
+  "chooser-path-label": "Please output path",
+  "text-sign-version": "Sign version：",
+  "btn-collect-title": "　Collector　",
+  "btn-collect-log": "　Get Log　",
+  "btn-collect-shot": "　Screen Shot　",
+  "btn-collect-svr": "　Running Services　",
+  "btn-collect-ui": "　TOP UI　",
+  "btn-collect-prop": "　Device Property　",
+  "btn-collect-app": "　App List　",
+  "btn-collect-all": "　ALL　",
+  "btn-collect-top": "　Foreground APP　",
+  "btn-collect-pull": "　Get APK　",
+  "btn-collect-pull-hint": "(Input apk package name)",
+  "btn-tool-screen": "　Screen　",
+  "btn-tool-screen-hint": "(Get device screen)",
+  "console-info": "1. Ensure that the Android system device is connected.\n2. The device has enabled developer mode.\n"
+}

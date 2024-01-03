@@ -1,0 +1,16 @@
+{
+  "title": "Signature(IPA)",
+  "chooser-in-label": "Please select ipa file",
+  "chooser-out-label": "Please select output path",
+  "btn-sign": "　Sign　",
+  "text-label-cert": "Certificate Name",
+  "text-main-provision": "Choose mobile provision file for the main app",
+  "text-plugin-provision": "Choose plugin provision file (Ignored if none plugin)",
+  "text-plugin-dialog-title": "Choose provision",
+  "text-plugin-dialog-content": "Select the description file matching the plugin",
+  "text-plugin-format": "Choose %d provision files",
+  "console-info": "iOS platform application signing is only supported on MacOS.\n1. Prepare the application IPA package, P12 certificate, and provisioning profile for signing. If there are plugins, multiple profiles may be required.\n2. Install the P12 certificate on your system.\n3. Please refer to the document \"Apple操作手册.pdf\" for instructions on how to create the certificate and provisioning profile.\n",
+  "text-bundle-id": "Bundle ID：",
+  "bundle-id-1": "Not changed",
+  "bundle-id-2": "Changed(Optional)"
+}

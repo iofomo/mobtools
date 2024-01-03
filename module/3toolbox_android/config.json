@@ -1,0 +1,5 @@
+{
+  "command": "android_toolbox_command.py",
+  "fragment": "android_toolbox_fragment.py",
+  "module": "android_toolbox_module.py"
+}
