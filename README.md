@@ -1,8 +1,8 @@
 # MobTools
 
 <p align="center">
-    <img src="doc/README.assets/license-mit.svg" alt="license:MIT" />
-    <img src="doc/README.assets/python-2x3x.svg" alt="python:2x3x" />
+    <img src="doc/ReadMe.assets/license-mit.svg" alt="license:MIT" />
+    <img src="doc/ReadMe.assets/python-2x3x.svg" alt="python:2x3x" />
 </p>
 
 ## 说明
