@@ -3,7 +3,9 @@
 # @Author: ...
 # @Date:   2023.08.03 23:32:52
 
-import os
+import os, sys
+
+sys.path.append('.')
 
 from framework.ModuleBase import ModuleBase
 from utils.utils_cmn import CmnUtils
@@ -11,7 +13,7 @@ from utils.utils_file import FileUtils
 from utils.utils_logger import LoggerUtils
 from utils.utils_adb import AdbUtils
 from utils.utils_adb_dumper import ADBDumper
-from tool_screen import ToolScreen
+from .tool_screen import ToolScreen
 
 # --------------------------------------------------------------------------------------------------------------------
 def createModule(path):
@@ -57,6 +59,11 @@ class AndroidToolboxModule(ModuleBase):
     def doAction(self, typ):
         ModuleBase.doAction(self)
         if not self.isValid(): return
+
+        AdbUtils.ensureEnv()
+        if not AdbUtils.isDeviceConnected():
+            print('No device connect')
+            return
 
         if typ == 'top':
             LoggerUtils.println('parse top app ...')

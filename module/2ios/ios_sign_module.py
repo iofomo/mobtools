@@ -58,6 +58,9 @@ class IosSignModule(ModuleBase):
     def doAction(self):
         ModuleBase.doAction(self)
         if not self.isValid(): return
+        if not CmnUtils.isOsMac():
+            print('Only supports MacOS.')
+            return
         print('do sign ...')
         bin = Resource.getBinFile('resign')
         if CmnUtils.isEmpty(bin):

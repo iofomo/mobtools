@@ -96,7 +96,7 @@ class FragmentBase:
     def createSubTitle(self, title=None):
         title = title if title is not None else self.mModule.getTitle()
         _font = tkfont.Font(family="Helvetica", size=15, weight="bold")
-        UiKit.createLabel(self.mWindow, '☞ ' + title + ' ☜', 'left', _font)
+        UiKit.createLabel(self.mWindow, title, 'left', _font)
 
     def doAsyncActionCall(self, callback, arg, arg2=None, arg3=None):
         if arg2 is None and arg3 is None:

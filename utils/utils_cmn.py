@@ -143,7 +143,7 @@ class CmnUtils:
                     line = line.decode().strip()
                     if len(line) <= 0: continue
                     f.write(line + '\n')
-            return False
+            return True
         except Exception as e:
             LoggerUtils.println(e)
         finally:
@@ -346,6 +346,15 @@ class CmnUtils:
             if 0 <= index < ll:
                 pp.append(projects[index])
         return pp
+
+    @staticmethod
+    def getJavaVersion():
+        ret = CmnUtils.doCmd('java -version')
+        if CmnUtils.isEmpty(ret): return None
+        s = ret.split('\n')[0].strip()
+        pos = s.find('"')
+        if pos < 0: return None
+        return s[pos+1:-1]
 
 
 class CmnThread(threading.Thread):

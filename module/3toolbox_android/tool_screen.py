@@ -6,10 +6,6 @@
 import os
 import sys
 
-g_this_file = os.path.realpath(sys.argv[0])
-g_this_path = os.path.dirname(g_this_file)
-sys.path.append(os.path.dirname(g_this_path))
-
 from utils.utils_cmn import CmnUtils
 from utils.utils_logger import LoggerUtils
 from utils.utils_import import ImportUtils
@@ -35,7 +31,7 @@ class ToolScreen:
         dd = AdbUtils.getDevices()
         # print(dd)
         if CmnUtils.isEmpty(dd):
-            LoggerUtils.e('No devices found')
+            LoggerUtils.e('No devices connect')
             return
         if sysEnv:
             for d in dd: CmnUtils.doCmd("scrcpy -s " + d + " &")

@@ -91,16 +91,17 @@ class IosSignFragment(FragmentBase):
 
     def getCertNames(self):
         cnn = []
-        ret = CmnUtils.doCmd('security find-identity -v')
-        for line in ret.split('\n'):
-            line = line.strip()
-            pos = line.find('"')
-            if pos <= 0: continue
-            line = line[pos+1:]
-            pos = line.find('"')
-            if pos <= 0: continue
-            cnn.append(line[:pos])
-        return cnn
+        if CmnUtils.isOsMac():
+            ret = CmnUtils.doCmd('security find-identity -v')
+            for line in ret.split('\n'):
+                line = line.strip()
+                pos = line.find('"')
+                if pos <= 0: continue
+                line = line[pos+1:]
+                pos = line.find('"')
+                if pos <= 0: continue
+                cnn.append(line[:pos])
+        return cnn if 0 < len(cnn) else ['None']
 
     def saveCache(self):
         self.mModule.setCache(RID_BUNDLE_ID, self.radioType.get())

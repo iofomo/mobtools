@@ -75,14 +75,14 @@ class AndroidSignModule(ModuleBase):
             return False
 
         print("do zipalign verify ...")
-        ret = CmnUtils.doCmd('"%s" -c -v 4 "%s"' % (zipalign, self.mFile))
+        ret = CmnUtils.doCmd('"%s" -c -v 4 "%s"' % (CmnUtils.formatArgument(zipalign), CmnUtils.formatArgument(self.mFile)))
         print(ret)
         if CmnUtils.isEmpty(ret): return False
         if 0 < ret.find('Verification succesful'): return True
 
         print("do zipalign ...")
         zlApkFile = self.mFile[:-4] + "-zl.apk"
-        CmnUtils.doCmd('"%s" -p -f 4 "%s" "%s"' % (zipalign, self.mFile, zlApkFile))
+        CmnUtils.doCmd('"%s" -p -f 4 "%s" "%s"' % (CmnUtils.formatArgument(zipalign), CmnUtils.formatArgument(self.mFile), CmnUtils.formatArgument(zlApkFile)))
         self.mFile = zlApkFile
         return True
 
@@ -95,7 +95,13 @@ class AndroidSignModule(ModuleBase):
         else: assert 0, "Invalid sign version"
 
         fmt = 'java -jar "%s" sign --ks "%s" --ks-key-alias %s --key-pass pass:%s --ks-pass pass:%s --out "%s" %s "%s"'
-        cmd = fmt % (jarFile, self.mKeyStoreFile, self.mAlias, self.mPassword, self.mStorePassword, outFile, ver, self.mFile)
+        cmd = fmt % (CmnUtils.formatArgument(jarFile),
+                     CmnUtils.formatArgument(self.mKeyStoreFile),
+                     self.mAlias, self.mPassword, self.mStorePassword,
+                     CmnUtils.formatArgument(outFile),
+                     ver,
+                     CmnUtils.formatArgument(self.mFile)
+                     )
         ret = CmnUtils.doCmd(cmd)
         print(ret)
 
@@ -104,15 +110,19 @@ class AndroidSignModule(ModuleBase):
         ModuleBase.doAction(self)
         if not self.isValid(): return
 
+        if CmnUtils.getJavaVersion() is None:
+            print('Error: Java runtime environment exception !')
+            return
+
         jarFile = Resource.getBinFile('apksigner.jar')
         if CmnUtils.isEmpty(jarFile):
             print('Error: apksigner.jar not exist !')
-            return False
+            return
 
-        CmnUtils.doCmd('chmod 0777 "%s"' % jarFile)
+        CmnUtils.doCmd('chmod 0777 "%s"' % CmnUtils.formatArgument(jarFile))
 
         print('do sign ...')
-        ret = CmnUtils.doCmd('keytool -list -v -keystore "%s" -storepass %s' % (self.mKeyStoreFile, self.mStorePassword))
+        ret = CmnUtils.doCmd('keytool -list -v -keystore "%s" -storepass %s' % (CmnUtils.formatArgument(self.mKeyStoreFile), self.mStorePassword))
         print(ret)
 
         outFile = self.mPath + os.sep + os.path.basename(self.mFile)[:-4] + '-signed.apk'
@@ -123,10 +133,10 @@ class AndroidSignModule(ModuleBase):
         if not os.path.isfile(outFile):
             print("Fail")
             return
-        ret = CmnUtils.doCmd('keytool -printcert -jarfile "%s"' % (outFile))
+        ret = CmnUtils.doCmd('keytool -printcert -jarfile "%s"' % (CmnUtils.formatArgument(outFile)))
         print(ret)
 
-        ret = CmnUtils.doCmd('java -jar "%s" verify -v "%s"' % (jarFile, outFile))
+        ret = CmnUtils.doCmd('java -jar "%s" verify -v "%s"' % (CmnUtils.formatArgument(jarFile), CmnUtils.formatArgument(outFile)))
         print(ret)
 
         print('\n>>> ' + outFile)
